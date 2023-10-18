@@ -1,5 +1,7 @@
 {
-  "name": "patch",
+  "name": "@ourway/patch",
+  "version": "0.1.0",
+  "description": "Lightweight javascript object patch and diff.",
   "module": "patch.ts",
   "main": "src/patch.ts",
   "devDependencies": {
@@ -19,5 +21,15 @@
     "lint:fix": "biome check --apply src",
     "ci": "biome ci src"
   },
-  "type": "module"
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/anicolao/patch.git"
+  },
+  "author": "Alex Nicolaou",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/anicolao/patch/issues"
+  },
+  "homepage": "https://github.com/anicolao/patch#readme"
 }
