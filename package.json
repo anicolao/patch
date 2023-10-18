@@ -1,0 +1,23 @@
+{
+  "name": "patch",
+  "module": "patch.ts",
+  "main": "src/patch.ts",
+  "devDependencies": {
+    "@biomejs/biome": "^1.2.2",
+    "@vitest/coverage-v8": "^0.34.6",
+    "bun-types": "latest",
+    "vitest": "^0.34.6"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "scripts": {
+    "test": "vitest run --coverage",
+    "test:watch": "vitest watch --coverage",
+    "format": "biome format --write src",
+    "lint": "biome check src",
+    "lint:fix": "biome check --apply src",
+    "ci": "biome ci src"
+  },
+  "type": "module"
+}

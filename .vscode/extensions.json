@@ -1,0 +1,7 @@
+{
+  "recommendations": [
+    "zixuanchen.vitest-explorer",
+    "wallabyjs.wallaby-vscode",
+    "biomejs.biome"
+  ]
+}
