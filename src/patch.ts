@@ -29,19 +29,17 @@ export function diff<T extends Value | object>(a: T, b: T): Patch {
   // biome-ignore lint/suspicious/noExplicitAny: <explanation>
   const ret: { [k: string]: any } = {};
   let entries = 0;
-  Object.entries(oldA).forEach((e) => {
+  for (const e of Object.entries(oldA)) {
     const d = diff(oldA[e[0]], newA[e[0]]);
     if (d !== null) {
       ++entries;
       ret[e[0]] = d === undefined ? null : d;
     }
-  });
-  Object.entries(b)
-    .filter((e) => oldA[e[0]] === undefined)
-    .forEach((e) => {
-      ++entries;
-      ret[e[0]] = newA[e[0]];
-    });
+  }
+  for (const e of Object.entries(b).filter((e) => oldA[e[0]] === undefined)) {
+    ++entries;
+    ret[e[0]] = newA[e[0]];
+  }
   if (entries === 0) return null;
   return clone(ret);
 }
@@ -58,14 +56,14 @@ export function patch(a: Patch, p: Patch): Patch {
   }
   if (typeof p !== "object") return p;
   const newA: { [k: string]: Patch } = a as { [k: string]: Patch };
-  Object.keys(p).forEach((key) => {
+  for (const key in p) {
     const value = p[key];
     if (value === null) {
       delete newA[key];
     } else {
       newA[key] = patch(newA[key], value);
     }
-  });
+  }
   if (Array.isArray(newA)) {
     // biome-ignore lint/suspicious/noExplicitAny: <explanation>
     return newA.filter((x: any) => x !== undefined);

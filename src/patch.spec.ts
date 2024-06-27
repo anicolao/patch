@@ -23,7 +23,6 @@ describe("diff/patch work as expected", () => {
   });
   it("diff test object key changes type", () => {
     const a = "a";
-    const b = "b";
     const c = "c";
     const d = diff({ a, b: "c", c }, { a, b: { obj: "hello" }, c });
     expect(d).to.deep.equal({ b: { obj: "hello" } });
