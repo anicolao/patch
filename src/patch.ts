@@ -1,6 +1,6 @@
 export type Value = boolean | number | string | undefined;
 // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-type Patch = { [k: string]: any } | Value | null;
+export type Patch = { [k: string]: any } | Value | null;
 
 // biome-ignore lint/suspicious/noExplicitAny: <explanation>
 export function clone(o: any) {
