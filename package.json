@@ -2,7 +2,6 @@
   "name": "@ourway/patch",
   "version": "0.1.1",
   "description": "Lightweight javascript object patch and diff.",
-  "module": "patch.ts",
   "main": "src/patch.ts",
   "devDependencies": {
     "@biomejs/biome": "^1.2.2",
